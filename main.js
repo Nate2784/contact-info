@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
-FN:Tigist Damte
+FN:Tigest Damite
 ORG:Cloud 251
 TEL;TYPE=CELL:+251940793142
-EMAIL:tigist@cloud251.com
+EMAIL:tigest@cloud251.com
 URL:http://www.cloud251.com
 END:VCARD
         `.trim();
