@@ -40,7 +40,7 @@ END:VCARD
         URL.revokeObjectURL(url);
         
          // Optionally, provide feedback to the user
-         alert('The contact vCard has been downloaded. Please import it into your contacts.');
+         alert('The contact vCard has been downloaded. Please import it into your contacts. Thank you!');
     
     });
 });
