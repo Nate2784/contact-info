@@ -6,16 +6,18 @@
 }
 
 :root {
-    --primary-color: #17629D;
-    --secondary-color: #c061b5;
+    --primary-color: #0a84ff; /* Icy blue */
+    --secondary-color: #66ccff; /* Light blue */
     --light-color: #FFF;
-    --dark-color: #000;
-    --background-body: #000; 
+    --dark-color: #111; /* Darker shade */
+    --background-body: #1c1f26; /* Dark blue-gray for the background */
 }
 
 body {
     background-color: var(--background-body);
     color: var(--light-color);
+    overflow: hidden; /* Prevent scrollbars for snow effect */
+    position: relative; /* Relative positioning for snowflakes */
 }
 
 .main-container {
@@ -24,6 +26,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
+    z-index: 10; /* Higher z-index for the card container */
+    overflow: hidden;
 }
 
 .card-container {
@@ -33,7 +38,11 @@ body {
     padding: 20px;
     text-align: center;
     position: relative;
-    margin: 0 auto; 
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo img {
@@ -43,11 +52,14 @@ body {
     left: 20px;
 }
 
+/* Profile Image Border */
 .image-section {
     margin: 40px auto 20px;
-    width: 160px; 
+    width: 160px;
     height: 160px;
     border-radius: 50%;
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden; /* Hide overflow from pseudo-element */
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     animation: rotateBorder 5s linear infinite;
     display: flex;
@@ -56,14 +68,28 @@ body {
     padding: 5px;
 }
 
+.image-section::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust based on the border width */
+    left: -5px; /* Adjust based on the border width */
+    right: -5px; /* Adjust based on the border width */
+    bottom: -5px; /* Adjust based on the border width */
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--light-color));
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: borderGradient 5s linear infinite;
+    filter: blur(4px); /* Optional, for a smoother border */
+}
+
 .image-section img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 50% 20%; 
+    object-position: 50% 20%;
 }
-
 
 @keyframes rotateBorder {
     0% {
@@ -88,7 +114,7 @@ body {
 }
 
 .buttons {
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 .buttons a {
@@ -98,15 +124,15 @@ body {
     padding: 10px 15px;
     margin: 5px 0;
     border-radius: 10px;
-    display: block; 
+    display: block;
     width: 100%;
-    text-align: left; 
-    transition: background-color 0.4s ease, color 0.4s ease; 
+    text-align: left;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .buttons a:hover {
     background-color: var(--secondary-color);
-    color: var(--light-color);
+    color: var(--dark-color);
 }
 
 .buttons a i {
@@ -119,6 +145,7 @@ body {
     margin-top: 20px; 
 }
 
+/* Button Gradient Border */
 .save-btn a.save {
     text-decoration: none;
     font-size: large;
@@ -126,9 +153,8 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
     display: inline-block;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     position: relative;
-    z-index: 1;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -140,19 +166,28 @@ body {
     right: 0;
     bottom: 0;
     border-radius: 8px;
-    padding: 2px; 
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, var(--secondary-color), var(--light-color));
+    background-size: 200% 200%;
     z-index: -1;
     transition: opacity 0.4s ease, background-size 0.4s ease;
-    background-size: 200% 200%; 
-    animation: gradientMove 5s linear infinite; 
+    animation: borderGradient 5s linear infinite;
 }
 
 .save-btn a.save:hover::before {
     opacity: 0;
 }
 
-@keyframes gradientMove {
+@keyframes borderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes rotateBorder {
     0% {
         background-position: 0% 50%;
     }
@@ -166,6 +201,25 @@ body {
     color: var(--dark-color);
 }
 
+/* Cloud Effect */
+.cloud {
+    position: absolute;
+    top: -10px;
+    color: var(--secondary-color); 
+    user-select: none;
+    pointer-events: none;
+    z-index: 0; /* Lower z-index to keep it behind the card */
+    animation: cloudFall 10s linear infinite; /* Shorter duration for faster falling animation */
+    font-size: 1em; /* Larger size for clouds */
+    opacity: 0.3; /* Decreased opacity for more transparent clouds */
+}
+
+@keyframes cloudFall {
+    to {
+        transform: translateY(100vh) translateX(100px); /* Spread clouds more horizontally */
+    }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .card-container {
@@ -173,7 +227,7 @@ body {
     }
 
     .logo img {
-        width: 60px; 
+        width:50px; 
     }
 
     .name {

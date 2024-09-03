@@ -44,3 +44,26 @@ END:VCARD
     
     });
 });
+
+// JavaScript to create a cloud effect
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.querySelector('body');
+
+    function createCloud() {
+        const cloud = document.createElement('div');
+        cloud.classList.add('cloud', 'fa', 'fa-cloud');
+        cloud.style.left = Math.random() * (window.innerWidth - 100) + 'px'; // Ensure clouds are within the viewport
+        cloud.style.animationDuration = Math.random() * 10 + 15 + 's'; // More variation in speed
+        cloud.style.fontSize = Math.random() * 20 + 10 + 'px'; // Random cloud size
+        cloud.style.transform = `translateX(${Math.random() * 200 - 100}px)`; // Random horizontal starting point
+        body.appendChild(cloud);
+    
+        // Remove cloud after it falls off screen
+        setTimeout(() => {
+            cloud.remove();
+        }, parseFloat(cloud.style.animationDuration) * 1000); // Match removal with animation duration
+    }
+    
+    setInterval(createCloud, 2000); // Adjusted interval for a more balanced appearance
+    
+});
