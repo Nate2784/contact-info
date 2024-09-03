@@ -142,7 +142,7 @@ body {
     width: 100%; /* Ensure buttons fill the container width */
     text-align: start; /* Center the text inside the buttons */
     transition: background-color 0.4s ease, color 0.4s ease;
-    font-size: large; /* Increased font size for buttons */
+    font-size: 18px; /* Increased font size for buttons */
 }
 
 .buttons a:hover {
