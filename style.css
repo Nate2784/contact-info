@@ -56,8 +56,8 @@ body {
 /* Profile Image Border */
 .image-section {
     margin: 15px auto 20px;
-    width: 210px;
-    height: 210px;
+    width: 246px;
+    height: 246px;
     border-radius: 50%;
     position: relative; /* Needed for the pseudo-element */
     overflow: hidden; /* Hide overflow from pseudo-element */
@@ -85,8 +85,8 @@ body {
 }
 
 .image-section img {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 20%;
