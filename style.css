@@ -142,7 +142,7 @@ body {
     width: 100%; /* Ensure buttons fill the container width */
     text-align: start; /* Center the text inside the buttons */
     transition: background-color 0.4s ease, color 0.4s ease;
-    font-size: 18px; /* Increased font size for buttons */
+    font-size: 20px; /* Increased font size for buttons */
 }
 
 .buttons a:hover {
@@ -153,7 +153,7 @@ body {
 .buttons a i {
     margin-right: 15px; 
     margin-left: 10px;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .save-btn {
