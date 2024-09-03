@@ -38,6 +38,7 @@ body {
     padding: 20px;
     text-align: center;
     position: relative;
+    top: 10px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
     backdrop-filter: blur(10px);
@@ -48,15 +49,16 @@ body {
 .logo img {
     width: 100px;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 25px;
+    z-index: 20; /* Higher z-index to bring it to the front */
 }
 
 /* Profile Image Border */
 .image-section {
-    margin: 40px auto 20px;
-    width: 160px;
-    height: 160px;
+    margin: 15px auto 20px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
     position: relative; /* Needed for the pseudo-element */
     overflow: hidden; /* Hide overflow from pseudo-element */
@@ -84,8 +86,8 @@ body {
 }
 
 .image-section img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 20%;
@@ -100,34 +102,48 @@ body {
     }
 }
 
-.name {
-    font-size: 24px;
+.title {
+    font-size: 35px;
     font-weight: bold;
-    margin-top: 15px;
+    background: linear-gradient(45deg, var(--primary-color), var(--light-color) 1%, var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* For WebKit browsers */
+    background-clip: text; /* For other browsers */
     text-transform: uppercase;
+}
+
+.name {
+    font-size: 20px;
+    color: #aaa;
+    margin: 10px 0;
 }
 
 .position {
     font-size: 18px;
+    color: #888;
     margin-bottom: 30px;
-    color: #aaa;
 }
 
 .buttons {
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the buttons horizontally */
+    width: 95%; /* Set the width of the buttons container */
+    margin: 10px auto; /* Center the container and add margin */
 }
 
 .buttons a {
     text-decoration: none;
     color: var(--light-color);
     border: 2px solid #555;
-    padding: 10px 15px;
+    padding: 12px 20px; /* Increased padding for larger buttons */
     margin: 5px 0;
     border-radius: 10px;
     display: block;
-    width: 100%;
-    text-align: left;
+    width: 100%; /* Ensure buttons fill the container width */
+    text-align: start; /* Center the text inside the buttons */
     transition: background-color 0.4s ease, color 0.4s ease;
+    font-size: large; /* Increased font size for buttons */
 }
 
 .buttons a:hover {
@@ -138,10 +154,11 @@ body {
 .buttons a i {
     margin-right: 15px; 
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .save-btn {
+    font-size: large;
     margin-top: 20px; 
 }
 
