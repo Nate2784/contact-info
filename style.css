@@ -243,7 +243,7 @@ body {
     }
 
     .logo img {
-        width:50px; 
+        width:45px; 
     }
 
     .name {
@@ -270,26 +270,29 @@ body {
         width: 90%; 
     }
 
-    /* .image-section {
-        width: 180px; 
-        height: 180px;
+    .image-section {
+        width: 171px; 
+        height: 171px;
     }
 
     .image-section img {
-        width: 170px; 
-        height: 170px;
-    } */
+        width: 165px; 
+        height: 165px;
+    }
+    .title {
+        font-size: 25px;
+    }
 
     .name {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .position {
-        font-size: 14px; 
+        font-size: 13px; 
     }
 
     .buttons a {
-        font-size: 18px; 
+        font-size: 16px; 
         padding: 7px 10px; 
     }
 
