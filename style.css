@@ -244,6 +244,8 @@ body {
 
     .logo img {
         width:50px; 
+        top: 10px;
+        left: 20px;
     }
 
     .name {

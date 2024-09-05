@@ -32,7 +32,7 @@ END:VCARD
         URL.revokeObjectURL(url);
         
         // Provide feedback to the user
-        alert('The contact vCard has been downloaded. if you\'re on Android Please open and import it into your contacts. Thank you!');
+        alert('The contact vCard has been downloaded. if you\'re on Android Please open and import it into your contacts. Thank you! ');
     });
 });
 
