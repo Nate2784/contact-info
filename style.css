@@ -262,7 +262,7 @@ body {
     }
 
     .save-btn a.save {
-        font-size: 16px; 
+        font-size: large; 
         padding: 8px 15px; 
     }
 }
@@ -295,7 +295,7 @@ body {
     }
 
     .buttons a {
-        font-size: 15px; 
+        font-size: 16px; 
         padding: 7px 5px; 
     }
     .buttons a i {
