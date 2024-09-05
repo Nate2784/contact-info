@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
+N:Damtie;Tigest;;;
 FN:Tigest Damtie
 ORG:Cloud 251
 TEL;TYPE=CELL:+251940793142
@@ -33,17 +34,17 @@ END:VCARD
         // Create a link element and simulate a click to download the file
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'Tigist_Damtie_Contact.vcf'; // File name
+        link.download = 'Tigest_Damtie_Contact.vcf'; // File name
         link.click();
 
         // Clean up the URL object
         URL.revokeObjectURL(url);
         
-         // Optionally, provide feedback to the user
-         alert('The contact vCard has been downloaded. Please import it into your contacts. Thank you!');
-    
+        // Provide feedback to the user
+        alert('The contact vCard has been downloaded. if you\'re on Android Please open and import it into your contacts. Thank you!');
     });
 });
+
 
 // JavaScript to create a cloud effect
 document.addEventListener("DOMContentLoaded", function () {
