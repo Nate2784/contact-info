@@ -267,35 +267,39 @@ body {
     }
 }
 
+
 @media (max-width: 480px) {
     .card-container {
         width: 90%; 
     }
 
     .image-section {
-        width: 171px; 
-        height: 171px;
+        width: 151px; 
+        height: 151px;
     }
 
     .image-section img {
-        width: 165px; 
-        height: 165px;
+        width: 145px; 
+        height: 145px;
     }
     .title {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .name {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .position {
-        font-size: 13px; 
+        font-size: 12px; 
     }
 
     .buttons a {
-        font-size: 16px; 
-        padding: 7px 10px; 
+        font-size: 13px; 
+        padding: 7px 5px; 
+    }
+    .buttons a i {
+        font-size: 18px; 
     }
 
     .save-btn a.save {
