@@ -268,16 +268,17 @@ body {
 @media (max-width: 480px) {
     .card-container {
         width: 90%; 
+        max-height: 80dvh;
     }
 
     .image-section {
-        width: 171px; 
-        height: 171px;
+        width: 151px; 
+        height: 151px;
     }
 
     .image-section img {
-        width: 165px; 
-        height: 165px;
+        width: 145px; 
+        height: 145px;
     }
     .title {
         font-size: 25px;
