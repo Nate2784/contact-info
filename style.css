@@ -303,7 +303,7 @@ body {
     }
 
     .save-btn a.save {
-        font-size: 14px; 
+        font-size: large; 
         padding: 7px 15px;
     }
 }
