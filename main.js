@@ -1,12 +1,3 @@
-const image = document.querySelector('.image-section img');
-
-image.addEventListener('mouseover', () => {
-    image.style.animationPlayState = 'paused'; // Pauses animation on hover
-});
-
-image.addEventListener('mouseout', () => {
-    image.style.animationPlayState = 'running'; // Resumes animation when not hovering
-});
 
 // save contact logic
 document.addEventListener('DOMContentLoaded', function() {
